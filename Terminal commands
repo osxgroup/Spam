@@ -1,0 +1,11 @@
+## handy terminal commands to use to get the script working
+
+php /usr/local/bin/emlParser5.php "from,to,subject,mail-from,x-spam-status,date" "/Volumes/Data/Kerio/mail/[your organization here]/*/Junk E-mail/#msgs/*" | pbcopy
+
+## past into excel and have fun
+
+
+
+## terminal command to  get list of undeliverable email address in order of use kerio security log
+
+grep 'Attempt to deliver to unknown recipient' security.log | cut -f2 -d "<" | cut -f1 -d ">" | sort | uniq -c | sort -rn
